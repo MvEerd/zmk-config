@@ -9,15 +9,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-&mt {
-    tapping-term-ms = <400>;
-};
-
-&lt {
-    quick_tap_ms = <150>;
-}
-
 / {
+    &mt {
+        tapping-term-ms = <400>;
+    };
+
+    &lt {
+        quick_tap_ms = <150>;
+    }
+
 	keymap {
 		compatible = "zmk,keymap";
 
