@@ -56,9 +56,9 @@
 };
 
 &mt {
-    tapping-term-ms = <400>;
+	tapping-term-ms = <400>;
 };
 
 &lt {
-    quick-tap-ms = <150>;
-}
+	quick-tap-ms = <150>;
+};
