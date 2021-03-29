@@ -10,11 +10,11 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 &mt {
-	tapping-term-ms = <400>;
+	tapping-term-ms = <500>;
 };
 
 &lt {
-	quick-tap-ms = <150>;
+	quick-tap-ms = <400>;
 };
 
 / {
