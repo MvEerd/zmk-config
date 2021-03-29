@@ -10,11 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 &mt {
-	tapping-term-ms = <500>;
-};
-
-&lt {
-	quick-tap-ms = <400>;
+	flavor = "tap-preferred";;
 };
 
 / {
