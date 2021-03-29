@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 &mt {
-	flavor = "tap-preferred";;
+	flavor = "tap-preferred";
 };
 
 / {
