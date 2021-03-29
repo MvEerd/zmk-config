@@ -13,6 +13,10 @@
 	flavor = "tap-preferred";
 };
 
+&lt {
+	quick-tap-ms = <300>;
+};
+
 / {
 	keymap {
 		compatible = "zmk,keymap";
