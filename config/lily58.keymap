@@ -32,11 +32,11 @@
 
 		default_layer {
 			bindings = <
-&kp EQUAL   &kp N1 &kp N2 &kp N3   &kp N4     &kp N5                                      &kp N6   &kp N7  &kp N8        &kp N9  &kp N0     &kp MINUS
-&kp ESC     &kp Q  &kp W  &kp E    &kp R      &kp T                                       &kp Y    &kp U   &kp I         &kp O   &kp P      &kp BSLH
-&kp LSHFT   &kp A  &kp S  &kp D    &kp F      &kp G                                       &kp H    &kp J   &kp K         &kp L   &lt 2 SEMI &mt RSHFT SQT
-&lt 1 GRAVE &kp Z  &kp X  &kp C    &kp V      &kp B           &kp LGUI     &kp F24        &kp N    &kp M   &kp COMMA     &kp DOT &kp FSLH   &kp RCTRL
-                          &kp LALT &lt 1 LGUI &sp LCTRL SPACE &lt 1 BSPC   &mt RSHFT TAB  &kp RET  &RALT   &kp RG(RSHFT)
+&kp EQUAL   &kp N1 &kp N2 &kp N3   &kp N4     &kp N5                                      &kp N6   &kp N7   &kp N8        &kp N9  &kp N0     &kp MINUS
+&kp ESC     &kp Q  &kp W  &kp E    &kp R      &kp T                                       &kp Y    &kp U    &kp I         &kp O   &kp P      &kp BSLH
+&kp LSHFT   &kp A  &kp S  &kp D    &kp F      &kp G                                       &kp H    &kp J    &kp K         &kp L   &lt 2 SEMI &mt RSHFT SQT
+&lt 1 GRAVE &kp Z  &kp X  &kp C    &kp V      &kp B           &kp LGUI     &kp F24        &kp N    &kp M    &kp COMMA     &kp DOT &kp FSLH   &kp RCTRL
+                          &kp LALT &lt 1 LGUI &sp LCTRL SPACE &lt 1 BSPC   &mt RSHFT TAB  &kp RET  &kp RALT &kp RG(RSHFT)
 			>;
 		};
 
