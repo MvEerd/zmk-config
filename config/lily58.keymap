@@ -9,55 +9,64 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-&mt {
-	flavor = "tap-preferred";
-};
-
 &lt {
 	quick-tap-ms = <300>;
 };
 
 / {
+
+	behaviors {
+		sp: space_modtap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "SPACE_MODTAP";
+			#binding-cells = <2>;
+			tapping-term-ms = <400>;
+			quick_tap_ms = <0>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+        	};
+    	};
+    
 	keymap {
 		compatible = "zmk,keymap";
 
 		default_layer {
 			bindings = <
-&kp ESC     &kp N1 &kp N2 &kp N3   &kp N4     &kp N5                                &kp N6   &kp N7  &kp N8        &kp N9  &kp N0     &kp MINUS
-&kp TAB     &kp Q  &kp W  &kp E    &kp R      &kp T                                 &kp Y    &kp U   &kp I         &kp O   &kp P      &kp BSLH
-&kp LSHFT   &kp A  &kp S  &kp D    &kp F      &kp G                                 &kp H    &kp J   &kp K         &kp L   &lt 2 SEMI &mt RSHFT SQT
-&lt 1 GRAVE &kp Z  &kp X  &kp C    &kp V      &kp B           &kp LGUI     &kp F24  &kp N    &kp M   &kp COMMA     &kp DOT &kp FSLH   &kp RCTRL
-                          &kp LALT &lt 1 LGUI &mt LCTRL SPACE &lt 1 BSPC   &kp TAB  &kp RET  &tog 3  &kp RG(RSHFT)
+&kp EQUAL   &kp N1 &kp N2 &kp N3   &kp N4     &kp N5                                      &kp N6   &kp N7   &kp N8        &kp N9  &kp N0     &kp MINUS
+&kp ESC     &kp Q  &kp W  &kp E    &kp R      &kp T                                       &kp Y    &kp U    &kp I         &kp O   &kp P      &kp BSLH
+&kp LSHFT   &kp A  &kp S  &kp D    &kp F      &kp G                                       &kp H    &kp J    &kp K         &kp L   &lt 2 SEMI &mt RSHFT SQT
+&lt 1 GRAVE &kp Z  &kp X  &kp C    &kp V      &kp B           &kp LGUI     &kp F24        &kp N    &kp M    &kp COMMA     &kp DOT &kp FSLH   &kp RCTRL
+                          &kp LALT &lt 1 LGUI &sp LCTRL SPACE &lt 1 BSPC   &mt RSHFT TAB  &kp RET  &kp RALT &kp RG(RSHFT)
 			>;
 		};
 
 		lower_layer {
 			bindings = <
-&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                     &trans    &trans    &trans      &trans   &trans   &kp EQUAL
-&kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                           &trans    &kp LPAR  &kp RPAR    &kp LT   &kp GT   &kp PIPE
-&kp GRAVE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                        &trans    &kp LBRC  &kp RBRC    &kp LBKT &kp RBKT &kp TILDE
-&kp TILDE  &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans        &trans   &trans    &trans    &kp MINUS &kp KP_PLUS &kp LBRC &kp RBRC &kp PIPE
-                                              &trans            &trans       &trans        &trans   &trans    &trans    &tog 3    &trans
+&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                            &trans    &trans    &trans      &trans   &trans   &kp EQUAL
+&kp TILDE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                               &trans    &kp LPAR  &kp RPAR    &kp LT   &kp GT   &kp PIPE
+&kp GRAVE  &kp CARET        &kp AMPERSAND     &kp ASTERISK      &kp LPAR     &kp RPAR                                &trans    &kp LBRC  &kp RBRC    &kp LBKT &kp RBKT &kp TILDE
+&kp TILDE  &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans        &trans   &trans           &trans    &kp MINUS &kp KP_PLUS &kp LBRC &kp RBRC &kp PIPE
+                                              &trans            &trans       &trans        &trans   &kp RG(RS(D))    &trans    &tog 3    &trans
 			>;
 		};
 
 		raise_layer {
 			bindings = <
-&kp EQUAL &trans &trans &trans        &trans &trans                    &trans      &trans    &trans    &trans    &trans   &trans
-&kp GRAVE &kp N1 &kp N2 &kp N3        &kp N4 &kp N5                    &kp N6      &kp N7    &kp N8    &kp N9    &kp N0   &trans
-&trans    &trans &trans &kp LG(LS(S)) &trans &trans                    &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT &trans   &trans
-&trans    &trans &trans &trans        &trans &trans &trans   &trans    &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH
-                        &trans        &trans &trans &trans   &trans    &trans      &trans    &trans
+&kp EQUAL &trans &trans &trans        &trans &trans                &trans    &trans      &trans    &trans    &trans   &trans
+&kp GRAVE &kp N1 &kp N2 &kp N3        &kp N4 &kp N5                &kp N6    &kp N7      &kp N8    &kp N9    &kp N0   &trans
+&trans    &trans &trans &kp LG(LS(S)) &trans &trans                &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT &trans   &trans
+&trans    &trans &trans &trans        &trans &trans &trans         &trans    &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
+                        &trans        &trans &trans &kp RG(RS(D))  &trans    &trans      &trans    &trans
 			>;
 		};
 
 		 colemak_layer {
             bindings = <
-&kp ESC         &kp N1 &kp N2 &kp N3   &kp N4 &kp N5                                &kp N6  &kp N7 &kp N8    &kp N9  &kp N0   &kp MINUS
-&kp TAB         &kp Q  &kp W  &kp F    &kp P  &kp B                                 &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp SQT
-&kp LSHFT       &kp A  &kp R  &kp S    &kp T  &kp G                                 &kp M   &kp N  &kp E     &kp I   &lt 2 O  &mt RSHFT SQT
-&mt LCTRL GRAVE &kp Z  &kp X  &kp C    &kp D  &kp V           &kp LGUI     &kp RBKT &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-                              &kp LALT &mo 1  &mt LCTRL SPACE &lt 1 BSPC   &kp TAB  &kp RET &tog 3 &kp RGUI
+&kp ESC         &kp N1 &kp N2 &kp N3   &kp N4 &kp N5                                     &kp N6  &kp N7 &kp N8    &kp N9  &kp N0   &kp MINUS
+&kp TAB         &kp Q  &kp W  &kp F    &kp P  &kp B                                      &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp SQT
+&kp LSHFT       &kp A  &kp R  &kp S    &kp T  &kp G                                      &kp M   &kp N  &kp E     &kp I   &lt 2 O  &mt RSHFT SQT
+&mt LCTRL GRAVE &kp Z  &kp X  &kp C    &kp D  &kp V           &kp LGUI     &kp RBKT      &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+                              &kp LALT &mo 1  &mt LCTRL SPACE &lt 1 BSPC   &mt RSHFT TAB &kp RET &tog 3 &kp RGUI
             >;
          };
 	};
