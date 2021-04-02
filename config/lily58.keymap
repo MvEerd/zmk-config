@@ -15,16 +15,17 @@
 
 / {
 
-    behaviors {
-        sp: space_modtap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SPACE_TAP";
-            tapping-term-ms = <400>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
+	behaviors {
+		sp: space_modtap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "SPACE_	MODTAP";
+			#binding-cells = <2>;
+			tapping-term-ms = <400>;
+			quick_tap_ms = <0>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+        	};
+    	};
     
 	keymap {
 		compatible = "zmk,keymap";
