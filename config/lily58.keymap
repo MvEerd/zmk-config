@@ -33,7 +33,11 @@
 			timeout-ms = <50>;
 			key-positions = <0 1>;
 			bindings = <&kp ESC>;
-			layers = <0 -1>;
+		};
+		combo_thumbs {
+			timeout-ms = <50>;
+			key-positions = <54 55>;
+			bindings = <&kp RG(D)>;
 		};
 	};
     
