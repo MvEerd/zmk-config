@@ -9,12 +9,22 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+	behaviors {
+		macro_1: macro_1 {
+		compatible = "zmk,behavior-macro";
+		label = "MACRO_1";
+		#binding-cells = <0>;
+		bindings = <&kp T>, <&kp H>, <&kp A>, <&kp T>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp S>, <&kp E>, <&kp A>, <&kp S>, <&kp Y>;
+    	};
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp E
+                &macro_1
             >;
 	};
     };
