@@ -1,6 +1,6 @@
 if SHIELD_STAPLES_EASY
 
 config ZMK_KEYBOARD_NAME
-    default "Staples easy button"
+    default "Easy button"
 
 endif
