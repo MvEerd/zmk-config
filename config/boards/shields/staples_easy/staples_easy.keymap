@@ -35,7 +35,7 @@
 
         default_layer {
             bindings = <
-                &mt &bt_clear &macro_1 
+                &macro_1 
             >;
 	};
     };
