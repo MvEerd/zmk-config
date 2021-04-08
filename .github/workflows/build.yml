@@ -46,16 +46,18 @@ jobs:
       - name: Prepare variables
         id: variables
         run: |
+          NOW=$(date +'%Y-%m-%dT%H:%M:%S')
           if [ -n "${{ matrix.shield }}" ]; then
             SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
-            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
+            ARTIFACT_NAME="zmk-${{ matrix.shield }}-${{ matrix.board }}-${DATE}"
           else
             SHIELD_ARG=
-            ARTIFACT_NAME="${{ matrix.board }}-zmk"
+            ARTIFACT_NAME="zmk-${{ matrix.board }}-${DATE}"
           fi
 
           echo ::set-output name=shield-arg::${SHIELD_ARG}
           echo ::set-output name=artifact-name::${ARTIFACT_NAME}
+          echo ::set-output name=datetime::${DATE}
       - name: Build (west build)
         run: west build -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }}
           -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
@@ -67,6 +69,6 @@ jobs:
         with:
           name: ${{ steps.variables.outputs.artifact-name }}
           path: |
-            build/zephyr/zmk.hex
-            build/zephyr/zmk.uf2
+            build/zephyr/zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.hex
+            build/zephyr/zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.uf2
         continue-on-error: true
