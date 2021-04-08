@@ -64,6 +64,10 @@ jobs:
       - name: Generated DTS file
         if: always()
         run: cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
+      - name: Rename zmk.uf2
+        run: cp build/zephyr/zmk.uf2 zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.uf2
+      - name: Rename zmk.hex
+        run: cp build/zephyr/zmk.hex zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.hex
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
