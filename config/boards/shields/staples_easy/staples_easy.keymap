@@ -11,14 +11,22 @@
 / {
 	behaviors {
 		macro_1: macro_1 {
-		compatible = "zmk,behavior-macro";
-		label = "MACRO_1";
-		#binding-cells = <0>;
-		bindings =
-		<&kp LS(T)>, <&kp H>, <&kp A>, <&kp T>, <&kp SPACE>,
-		<&kp W>, <&kp A>, <&kp S>, <&kp SPACE>,
-		<&kp E>, <&kp A>, <&kp S>, <&kp Y>, <&kp EXCL>, <&kp ENTER>;
-    	};
+			compatible = "zmk,behavior-macro";
+			label = "MACRO_1";
+			#binding-cells = <0>;
+			bindings =
+			<&kp LS(T)>, <&kp H>, <&kp A>, <&kp T>, <&kp SPACE>,
+			<&kp W>, <&kp A>, <&kp S>, <&kp SPACE>,
+			<&kp E>, <&kp A>, <&kp S>, <&kp Y>, <&kp EXCL>, <&kp ENTER>;
+    		};
+		
+		 bt_clear: bt_clear {
+			compatible = "zmk,behavior-macro";
+			label = "MACRO_1";
+			#binding-cells = <0>;
+			bindings =
+			<&bt BT_CLR>;
+    		};
     };
 
 
@@ -27,7 +35,7 @@
 
         default_layer {
             bindings = <
-                &mt &bt BT_CLR &macro_1 
+                &mt &bt_clear &macro_1 
             >;
 	};
     };
