@@ -73,6 +73,6 @@ jobs:
         with:
           name: ${{ steps.variables.outputs.artifact-name }}
           path: |
-            build/zephyr/zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.hex
-            build/zephyr/zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.uf2
+            zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.hex
+            zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.uf2
         continue-on-error: true
