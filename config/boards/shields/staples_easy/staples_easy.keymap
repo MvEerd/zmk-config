@@ -22,7 +22,7 @@
 		
 		 bt_clear: bt_clear {
 			compatible = "zmk,behavior-macro";
-			label = "MACRO_1";
+			label = "MACRO_2";
 			#binding-cells = <0>;
 			bindings =
 			<&bt BT_CLR>;
@@ -35,7 +35,7 @@
 
         default_layer {
             bindings = <
-                &macro_1 
+                &mt &bt_clear &macro_1 
             >;
 	};
     };
