@@ -49,15 +49,15 @@ jobs:
           NOW=$(date +'%Y-%m-%dT%H:%M:%S')
           if [ -n "${{ matrix.shield }}" ]; then
             SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
-            ARTIFACT_NAME="zmk-${{ matrix.shield }}-${{ matrix.board }}-${DATE}"
+            ARTIFACT_NAME="zmk-${{ matrix.shield }}-${{ matrix.board }}-${NOW}"
           else
             SHIELD_ARG=
-            ARTIFACT_NAME="zmk-${{ matrix.board }}-${DATE}"
+            ARTIFACT_NAME="zmk-${{ matrix.board }}-${NOW}"
           fi
 
           echo ::set-output name=shield-arg::${SHIELD_ARG}
           echo ::set-output name=artifact-name::${ARTIFACT_NAME}
-          echo ::set-output name=datetime::${DATE}
+          echo ::set-output name=datetime::${NOW}
       - name: Build (west build)
         run: west build -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }}
           -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
