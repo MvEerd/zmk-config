@@ -46,7 +46,7 @@ jobs:
       - name: Prepare variables
         id: variables
         run: |
-          NOW=$(date +'%Y-%m-%dT%H:%M:%S')
+          NOW=$(date +'%Y-%m-%dT%H_%M_%S')
           if [ -n "${{ matrix.shield }}" ]; then
             SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
             ARTIFACT_NAME="zmk-${{ matrix.shield }}-${{ matrix.board }}-${NOW}"
