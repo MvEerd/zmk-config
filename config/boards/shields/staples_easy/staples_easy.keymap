@@ -16,24 +16,6 @@
 			#binding-cells = <0>;
 			bindings = <&kp LS(T)>, <&kp H>, <&kp A>, <&kp T>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp S>, <&kp SPACE>, <&kp E>, <&kp A>, <&kp S>, <&kp Y>, <&kp EXCL>, <&kp ENTER>;
     		};
-		
-		 bt_clear: bt_clear {
-			compatible = "zmk,behavior-macro";
-			label = "MACRO_2";
-			#binding-cells = <0>;
-			bindings =
-			<&bt BT_CLR>;
-    		};
-		
-		tp: behavior_tap_preferred {
-			compatible = "zmk,behavior-hold-tap";
-			label = "MOD_TAP";
-			#binding-cells = <2>;
-			flavor = "tap-preferred";
-			tapping-term-ms = <300>;
-			quick-tap-ms = <200>;
-			bindings = <&bt>, <&kp>;
-		};
     };
 
 
@@ -42,7 +24,7 @@
 
         default_layer {
             bindings = <
-                &tp BT_CLR &macro_1 
+                &macro_1 
             >;
 	};
     };
