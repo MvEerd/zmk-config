@@ -14,7 +14,10 @@
 		compatible = "zmk,behavior-macro";
 		label = "MACRO_1";
 		#binding-cells = <0>;
-		bindings = <&kp T>, <&kp H>, <&kp A>, <&kp T>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp S>, <&kp E>, <&kp A>, <&kp S>, <&kp Y>;
+		bindings =
+		<&kp LS(T)>, <&kp H>, <&kp A>, <&kp T>, <&kp SPACE>,
+		<&kp W>, <&kp A>, <&kp S>, <&kp SPACE>,
+		<&kp E>, <&kp A>, <&kp S>, <&kp Y>, <&kp EXCL>, <&kp ENTER>;
     	};
     };
 
@@ -24,7 +27,7 @@
 
         default_layer {
             bindings = <
-                &macro_1
+                &mt &bt BT_CLR &macro_1 
             >;
 	};
     };
