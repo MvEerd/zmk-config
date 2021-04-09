@@ -1,0 +1,6 @@
+if SHIELD_STAPLES_EASY
+
+config ZMK_KEYBOARD_NAME
+    default "Easy button"
+
+endif
