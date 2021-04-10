@@ -8,7 +8,9 @@
 		compatible = "zmk,matrix-transform";
 		columns = <2>;
 		rows = <1>;
-		map = <RC(0,0) RC(0,1)>;
+		map = <
+RC(0,0) RC(0,1)
+		>;
 	};
 
 	kscan0: kscan {
