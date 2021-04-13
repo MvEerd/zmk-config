@@ -25,7 +25,12 @@
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
         	};
-		
+
+		/*
+		 * This inputs a poop emoji using IBus on Linux
+		 * To do this on Windows you'd need WinCompose
+		 * On MacOS you can use Unicode Hex Input
+		 */
 		poop: poop {
 			compatible = "zmk,behavior-macro";
 			label = "IBUS_POO";
