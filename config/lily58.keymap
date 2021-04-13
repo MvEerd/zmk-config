@@ -25,6 +25,18 @@
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
         	};
+
+		/*
+		 * This inputs a poop emoji using IBus on Linux
+		 * To do this on Windows you'd need WinCompose
+		 * On MacOS you can use Unicode Hex Input
+		 */
+		poop: poop {
+			compatible = "zmk,behavior-macro";
+			label = "IBUS_POO";
+			#binding-cells = <0>;
+			bindings = <&kp LC(LS(U))>, <&kp N1>, <&kp F>, <&kp N4>, <&kp A>, <&kp N9>, <&kp SPACE>;
+    		};
     	};
 	
 	combos {
@@ -60,7 +72,7 @@
 &kp TILDE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                           &trans    &kp LPAR  &kp RPAR    &kp LT   &kp GT   &kp PIPE
 &kp GRAVE  &kp CARET        &kp AMPERSAND     &kp ASTERISK      &kp LPAR     &kp RPAR                            &trans    &kp LBRC  &kp RBRC    &kp LBKT &kp RBKT &kp TILDE
 &kp TILDE  &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans        &trans   &trans       &trans    &kp MINUS &kp KP_PLUS &kp LBRC &kp RBRC &kp PIPE
-                                              &trans            &trans       &trans        &trans   &kp RG(D)    &trans    &tog 3    &trans
+                                              &trans            &trans       &trans        &trans   &kp RG(D)    &poop     &tog 3    &trans
 			>;
 		};
 
