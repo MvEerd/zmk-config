@@ -29,8 +29,8 @@
 		poop: poop {
 			compatible = "zmk,behavior-macro";
 			label = "IBUS_POO";
-			#binding-cells = <0>;
-			bindings = <&kp LC(LS(U))>, <&kp N1>, <&kp F>, <&kp N4>, <&kp A>, <&kp N9>;
+			#binding-cells = <6>;
+			bindings = <&kp LC(LS(U))>, <&kp N1>, <&kp F>, <&kp N4>, <&kp A>, <&kp N9>, <&kp SPACE>;
     		};
     	};
 	
