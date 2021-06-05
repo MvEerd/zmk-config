@@ -24,7 +24,16 @@
 			quick_tap_ms = <0>;
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
-        	};
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homerow mods";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 
 		/*
 		 * This inputs a poop emoji using IBus on Linux
@@ -36,8 +45,8 @@
 			label = "IBUS_POO";
 			#binding-cells = <0>;
 			bindings = <&kp LC(LS(U))>, <&kp N1>, <&kp F>, <&kp N4>, <&kp A>, <&kp N9>, <&kp SPACE>;
-    		};
     	};
+    };
 
 	combos {
 		compatible = "zmk,combos";
@@ -51,6 +60,11 @@
 			key-positions = <54 55>;
 			bindings = <&kp LG(D)>;
 		};
+		combo_colemak {
+        	timeout-ms = <50>;
+        	key-positions = <51 58>;
+        	bindings = <&tog 1>;
+        };
 	};
 
 	keymap {
@@ -60,9 +74,19 @@
 			bindings = <
 &kp EQUAL       &kp N1            &kp N2              &kp N3             &kp N4          &kp N5                                &kp N6          &kp N7          &kp N8        &kp N9          &kp N0          &kp MINUS
 &kp ESC         &kp Q             &kp W               &kp E              &kp R           &kp T                                 &kp Y           &kp U           &kp I         &kp O           &kp P           &kp BSLH
-&kp LSHFT       &kp A             &kp S               &kp D              &kp F           &kp G                                 &kp H           &kp J           &kp K         &kp L           &lt 2 SEMI      &mt RSHFT SQT
-&lt 1 GRAVE     &kp Z             &kp X               &kp C              &kp V           &kp B   &kp LGUI       &kp F24        &kp N           &kp M           &kp COMMA     &kp DOT         &kp FSLH        &kp RCTRL
-                                          &kp LALT           &lt 1 LGUI     &sp LCTRL SPACE      &lt 1 BSPC     &mt RSHFT TAB         &kp RET        &kp RALT       &kp RG(RSHFT)
+&kp LSHFT       &hm LGUI A        &hm LALT S          &hm LCTRL D        &hm LSHFT F     &kp G                                 &kp H           &hm RSHFT J     &hm RCTRL K   &hm LALT L      &lt 3 SEMI      &mt RSHFT SQT
+&lt 2 GRAVE     &kp Z             &kp X               &kp C              &kp V           &kp B   &kp LGUI       &kp F24        &kp N           &kp M           &kp COMMA     &kp DOT         &kp FSLH        &kp RCTRL
+                                          &kp LALT           &lt 2 LGUI     &sp LCTRL SPACE      &lt 2 BSPC     &mt RSHFT TAB         &kp RET        &kp RALT       &kp RG(RSHFT)
+			>;
+		};
+
+		colemak_layer {
+			bindings = <
+&trans          &trans           &trans               &trans             &trans          &trans                                &trans          &trans          &trans        &trans          &trans          &trans
+&trans          &kp Q             &kp W               &kp F              &kp P           &kp B                                 &kp J           &kp L           &kp U         &kp Y           &kp SEMI        &trans
+&trans          &hm LGUI A        &hm LALT R          &hm LCTRL S        &hm LSHFT T     &kp G                                 &kp M           &hm RSHFT J     &hm RCTRL E   &hm LALT I      &lt 2 O         &trans
+&trans          &kp Z             &kp X               &kp C              &kp D           &kp V   &trans         &trans         &kp K           &kp H           &kp COMMA     &kp DOT         &trans          &trans
+                                            &trans               &trans         &trans           &trans         &trans               &trans           &trans         &trans
 			>;
 		};
 
@@ -86,14 +110,5 @@
 			>;
 		};
 
-		 colemak_layer {
-            bindings = <
-&kp ESC         &kp N1 &kp N2 &kp N3   &kp N4 &kp N5                                     &kp N6  &kp N7 &kp N8    &kp N9  &kp N0   &kp MINUS
-&kp TAB         &kp Q  &kp W  &kp F    &kp P  &kp B                                      &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp SQT
-&kp LSHFT       &kp A  &kp R  &kp S    &kp T  &kp G                                      &kp M   &kp N  &kp E     &kp I   &lt 2 O  &mt RSHFT SQT
-&mt LCTRL GRAVE &kp Z  &kp X  &kp C    &kp D  &kp V           &kp LGUI     &kp RBKT      &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-                              &kp LALT &mo 1  &mt LCTRL SPACE &lt 1 BSPC   &mt RSHFT TAB &kp RET &tog 3 &kp RGUI
-            >;
-         };
 	};
 };
