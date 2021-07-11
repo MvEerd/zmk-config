@@ -1,0 +1,5 @@
+config SHIELD_TIGHTYL_LEFT
+	def_bool $(shields_list_contains,tightyl_left)
+
+config SHIELD_TIGHTYL_RIGHT
+	def_bool $(shields_list_contains,tightyl_right)
