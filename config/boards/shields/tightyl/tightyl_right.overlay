@@ -1,5 +1,9 @@
 #include "tightyl.dtsi"
 
+&default_transform {
+	col-offset = <6>;
+};
+
 &kscan0 {
 	col-gpios
 		= <&pro_micro_a  1 GPIO_ACTIVE_HIGH>
