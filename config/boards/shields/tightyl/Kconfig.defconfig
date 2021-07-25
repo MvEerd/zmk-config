@@ -8,13 +8,6 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 
 endif
 
-if SHIELD_TIGHTYL_RIGHT
-
-config ZMK_KEYBOARD_NAME
-	default "Tightyl Right"
-
-endif
-
 if SHIELD_TIGHTYL_LEFT || SHIELD_TIGHTYL_RIGHT
 
 config ZMK_SPLIT
