@@ -7,7 +7,6 @@
 	quick-tap-ms = <300>;
 };
 
-
 / {
     behaviors {
         sp: space_modtap {
@@ -50,4 +49,5 @@
                  &trans        &kp RPAR      &trans      &trans &trans           &trans &mt RSHFT TAB &kp RET   &trans    &trans
             >;
         };
+	};
 };
