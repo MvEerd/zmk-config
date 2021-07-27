@@ -1,2 +1,0 @@
-config SHIELD_STAPLES_EASY
-    def_bool $(shields_list_contains,staples_easy)
