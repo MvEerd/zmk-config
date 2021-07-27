@@ -2,6 +2,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define BASE 0
+#define SYM 1
+
+#define SPCTRL &sp LCTRL SPACE
+#define SHFTAB &mt RSHFT TAB
+#define BSPC_SYM &lt SYM BSPC
+
 &lt {
 	quick-tap-ms = <300>;
 };
@@ -24,10 +31,15 @@
 
 		default_layer {
 			bindings = <
-&kp ESC       &kp Q   &kp W        &kp E          &kp R           &kp T                          &kp Y         &kp U    &kp I       &kp O   &kp P       &kp MINUS
-&kp LSHFT     &kp A   &kp S        &kp D          &kp F           &kp G                          &kp H         &kp J    &kp K       &kp L   &lt 2 SEMI  &kp SQT
-&kp LCTRL     &kp Z   &kp X        &kp C          &kp V           &kp B                          &kp N         &kp M    &kp COMMA   &kp DOT &kp FSLH    &kp RCTRL
-                      &trans       &trans         &sp LCTRL SPACE &lt 1 BSPC &kp LGUI    &kp F24 &mt RSHFT TAB &kp RET   &trans    &trans
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+       &kp ESC        &kp Q        &kp W          &kp E         &kp R         &kp T                                             &kp Y         &kp U         &kp I         &kp O         &kp P       &kp MINUS
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      &kp LSHFT       &kp A        &kp S          &kp D         &kp F         &kp G                                             &kp H         &kp J         &kp K         &kp L       &lt 2 SEMI     &kp SQT
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      &kp LCTRL       &kp Z        &kp X          &kp C         &kp V         &kp B                                             &kp N         &kp M       &kp COMMA      &kp DOT       &kp FSLH    &kp RSHFT
+// ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴───────────────╮   ╭───────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
+                                   &trans         &trans          SPCTRL       BSPC_SYM     &kp LGUI           &kp F24        SHFTAB        &kp RET        &trans       &trans
+//                             ╰─────────────┴─────────────┴────────────────┴────────────┴─────────────╯   ╰─────────────┴─────────────┴────────────────┴────────────┴─────────────╯
 			>;
 		};
 
