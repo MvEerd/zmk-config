@@ -20,8 +20,6 @@ jobs:
             board: nrfmicro_13
           - shield: tightyl_right
             board: nrfmicro_13
-          - shield: staples_easy
-            board: nrfmicro_13
     steps:
       - name: Checkout
         uses: actions/checkout@v2
