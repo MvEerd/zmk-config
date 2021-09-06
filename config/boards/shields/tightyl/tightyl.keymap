@@ -4,10 +4,23 @@
 
 #define BASE 0
 #define SYM 1
+#define NAV 1
 
 #define SPCTRL &sp LCTRL SPACE
 #define SHFTAB &mt RSHFT TAB
 #define BSPC_SYM &lt SYM BSPC
+#define SPACE_NAV &lt NAV SPACE
+
+
+#define GUI_A &hm LGUI A
+#define ALT_S &hm LALT S
+#define CTRL_D &hm LCTRL D
+#define SHFT_F &hm LSHFT F
+
+#define SHFT_J &hm RSHFT J
+#define CTRL_K &hm RCTRL K
+#define ALT_L &hm RALT L
+#define GUI_SEMI &hm RGUI SEMI
 
 &lt {
 	quick-tap-ms = <300>;
@@ -24,6 +37,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+	hm: homerow_mods {
+	    compatible = "zmk,behavior-hold-tap";
+	    label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+	    tapping_term_ms = <200>;
+	    flavor = "tap-preferred";
+	    bindings = <&kp>, <&kp>;
+	};
     };
 
 	keymap {
@@ -34,11 +56,11 @@
 /* ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  */
        &kp ESC        &kp Q        &kp W          &kp E         &kp R         &kp T                                             &kp Y         &kp U         &kp I         &kp O         &kp P       &kp MINUS
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  */
-      &kp LSHFT       &kp A        &kp S          &kp D         &kp F         &kp G                                             &kp H         &kp J         &kp K         &kp L       &lt 2 SEMI     &kp SQT
+      &kp LSHFT       GUI_A        ALT_S          CTRL_D       SHFT_F         &kp G                                             &kp H        SHIFT_J       CTRL_K         ALT_L        GUI_SEMI     &kp SQT
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  */      
       &kp LCTRL       &kp Z        &kp X          &kp C         &kp V         &kp B                                             &kp N         &kp M       &kp COMMA      &kp DOT       &kp FSLH    &kp RSHFT
 /* ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴───────────────╮   ╭───────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  */
-                                   &trans         &trans         SPCTRL        BSPC_SYM     &kp LGUI           &kp F24        SHFTAB        &kp RET        &trans       &trans
+                                   &trans         &trans        BSPC_SYM      SPACE_NAV     &kp LGUI           &kp F24        SHFTAB        &kp RET        &trans       &trans
 //                             ╰─────────────┴─────────────┴────────────────┴────────────┴─────────────╯   ╰─────────────┴─────────────┴────────────────┴────────────┴─────────────╯ 
 			>;
 		};
