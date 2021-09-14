@@ -11,7 +11,7 @@
 
 #define SPCTRL &sp LCTRL SPACE
 #define SHFTAB &mt RSHFT TAB
-#define BSPC_SYM &lt SYM BSPC
+#define BSPC_SHFT &mt LSHFT BSPC
 #define SPACE_SYM &lt SYM SPACE
 #define TAB_NUM &lt NUM TAB
 #define RET_FUN &lt FUN RET
@@ -67,7 +67,7 @@
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  */
         &kp Z        &kp X          &kp C         &kp V         &kp B                                                                         &kp N         &kp M       &kp COMMA      &kp DOT       &kp FSLH
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯  */
-                                                               ESC_NAV      SPACE_SYM     BSPC_SYM               RET_SYM       TAB_NUM       RET_FUN
+                                                               SPACE_SYM    BSPC_SHFT      ESC_NAV               RET_SYM       TAB_NUM       RET_FUN
 //                                                         ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
 			>;
 
