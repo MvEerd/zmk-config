@@ -6,7 +6,7 @@
 #define NUM 1
 #define SYM 2
 #define NAV 3
-#define FUN 3
+#define FUN 4
 
 
 #define SPCTRL &sp LCTRL SPACE
