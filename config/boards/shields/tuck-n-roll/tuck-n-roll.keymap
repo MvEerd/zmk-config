@@ -34,6 +34,10 @@
 };
 
 / {
+    combos {
+      #include "combos.dtsi"
+    };
+
     behaviors {
         sp: space_modtap {
             compatible = "zmk,behavior-hold-tap";
