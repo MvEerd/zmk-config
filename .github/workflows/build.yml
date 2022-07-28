@@ -24,6 +24,8 @@ jobs:
             board: nrfmicro_13
           - shield: tuck-n-roll_right
             board: nrfmicro_13
+          - shield: plank
+            board: nrfmicro_13
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -69,9 +71,6 @@ jobs:
       - name: Build (west build)
         run: west build -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }}
           -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Generated DTS file
-        if: always()
-        run: cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 zmk-${{ matrix.shield }}-${{ matrix.board }}-${{ steps.variables.outputs.datetime }}.uf2
       - name: Rename zmk.hex
